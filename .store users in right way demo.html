@@ -1,0 +1,17 @@
+<h2 style="text-align: center;">OBJECTS</h2>
+<script type="text/javascript">
+    let obj={
+        name:"Ram",
+        age:56
+    };
+    var obj_serialized=   JSON.stringify(obj);//converting to string
+
+    console.log(obj_serialized);     
+    //localStorage.setItem("myobj",obj);
+        localStorage.setItem("my",obj_serialized);
+
+    //console.log(localStorage);
+    obj_deserialized=JSON.parse(localStorage.getItem("my"));     //get string type obj and converting to real obj
+    //console.log(obj_deserialized);
+    localStorage.setItem("myobj",obj_deserialized)
+</script>
