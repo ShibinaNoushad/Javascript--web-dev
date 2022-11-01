@@ -72,26 +72,9 @@ newDiv.appendChild(newdivtext);
 var container=document.querySelector('header .container');
 var h1=document.querySelector('header h1');
 container.insertBefore(newDiv,h1);
-/*var parent_node=document.getElementById('items');
+var parent_node=document.getElementById('items');
 //var li=document.createElement('li');
 //var liText=document.createTextNode('Hello word');
-//li.appendChild(liText);
+//var add_li=li.appendChild(liText);
 parent_node.innerHTML='<li>item 1</li><li>item 2</li><li>item 3</li><li>item 4</li>';
-parent_node.innerHTML='<li>Hello word</li>'+ parent_node.innerHTML;*/
-var items=document.getElementsByClassName('list-group-item');
-items[0].prepend('hello world');
-
-/*let SS=document.createElement('div')
-SS.className='new-Div1';
-SS.id='1234';
-//create text node
-let TText=document.createTextNode('HEllo word')
-//add to div
-SS.appendChild(TText);
-console.log(SS)
-//add element to the page
-let M=document.querySelector('ul .item ')
-let TT=document.querySelector('ul h2');
-console.log(SS);
-M.insertBefore(SS,TT);*/
-
+parent_node.innerHTML='<li>Hello word</li>'+ parent_node.innerHTML;
