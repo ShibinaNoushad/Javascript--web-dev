@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS For Beginners</title>
+    <link rel="stylesheet" href="store_more_users.css">
+  </head>
+  <body>
+    <header>
+      <h1>JS For Beginners</h1>
+    </header>
+
+    <section class="container">
+      <form onsubmit="saveToLoCalStorage(event)" id="my-form">
+        <h1>Add User</h1>
+        <div class="msg"></div>
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" name="username" id="name">
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="text" name="username" id="email">
+        </div>
+        <input class="btn" type="submit" id=" btn" value="Submit">
+      </form>
+
+      <ul id="users"></ul>
+<!--
+       <ul class="items">
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+      </ul>-->
+    </section>
+    
+
+    <script>
+        
+
+/*var username=document.getElementById('name');
+var email=document.getElementById('email');
+const btn=document.querySelector('.btn');
+var user=document.getElementById('users');
+
+btn.addEventListener('click',output);
+function output(e){
+    e.preventDefault();
+    let obj={
+        name:username.value,
+        email:email.value
+
+    };
+    var obj_serialized=   JSON.stringify(obj);
+    localStorage.setItem(email.value, obj_serialized);
+    var li=document.createElement('li');
+    li.appendChild(document.createTextNode(username.value));
+    li.appendChild(document.createTextNode(" "));
+    li.appendChild(document.createTextNode(email.value));
+    var add=add +user.appendChild(li);
+
+
+
+    
+}*/
+
+
+
+//yash sir code
+
+
+  function saveToLoCalStorage(event){
+  event.preventDefault();
+  var username=document.getElementById('name').value;
+var email=document.getElementById('email').value;
+    
+    let myobj={
+        username,
+        email
+    };
+
+    let myobj_serialized=JSON.stringify(myobj);
+    localStorage.setItem(myobj.email,myobj_serialized);
+    ShowNewUser(myobj) 
+}
+function ShowNewUser(user){
+  const parentNode=document.getElementById('users');
+  const childHTML= `<li> ${user.username} - ${user.email} </li>`;
+  parentNode.innerHTML=parentNode.innerHTML+childHTML  ;
+}
+
+window.addEventListener("DOMContentLoaded",() => {
+     const localStorageobj=localStorage;
+  const localStoragekeys=Object.keys(localStorageobj);
+  localStoragekeys.forEach(key =>{
+    const userdetailsStrings=localStorageobj[key];
+    const userdeailsObj=JSON.parse(userdetailsStrings);
+    ShowNewUser(userdeailsObj);
+  })
+  
+});
+
+   </script>
+  </body>
+</html>
